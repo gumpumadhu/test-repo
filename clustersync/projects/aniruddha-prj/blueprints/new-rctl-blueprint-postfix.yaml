@@ -4,6 +4,12 @@ metadata:
   name: new-rctl-blueprint-postfix
   project: aniruddha-prj
 spec:
+  base:
+    name: default
+    version: snapshot - 2022-01-19T01:23:31Z
+  customAddons:
+  - name: new-rctl-addon-gitrepohelm
+    version: v1
   defaultAddons:
     enableIngress: false
     enableLogging: false
@@ -13,3 +19,4 @@ spec:
     enabled: false
   sharing:
     enabled: false
+  version: v1
