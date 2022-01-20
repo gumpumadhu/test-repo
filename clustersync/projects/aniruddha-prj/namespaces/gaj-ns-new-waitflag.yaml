@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Namespace
 metadata:
-  name: gaj-ns-published
+  name: gaj-ns-new-waitflag
   project: aniruddha-prj
 spec:
   drift:
@@ -11,10 +11,6 @@ spec:
     pod: {}
   placement:
     labels:
-    - key: rafay.dev/clusterType
-      value: manual
-    - key: rafay.dev/ingress
-      value: enabled
-    - key: rafay.dev/alerting
-      value: enabled
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
   resourceQuotas: {}
