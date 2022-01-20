@@ -5,7 +5,11 @@ metadata:
   project: aniruddha-prj
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartPath:
+        name: file://artifacts/helminhelm/nginx-9.5.4.tgz
+      valuesPaths:
+      - name: file://artifacts/helminhelm/values.yaml
     options:
       maxHistory: 10
       timeout: 5m0s
