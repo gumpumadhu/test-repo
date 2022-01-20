@@ -3,4 +3,16 @@ kind: Namespace
 metadata:
   name: ns1
   project: aniruddha-prj
-spec: {}
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: hardik-qc-qcow2
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+  resourceQuotas: {}
