@@ -17,4 +17,5 @@ spec:
   drift:
     enabled: false
   namespace: new-gaj-ns-1
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterLocation in (sanjose-us,aws-us-west-2)
