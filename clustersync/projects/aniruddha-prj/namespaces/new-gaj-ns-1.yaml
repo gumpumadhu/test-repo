@@ -13,4 +13,6 @@ spec:
     labels:
     - key: rafay.dev/clusterName
       value: hardik-qc-mks-2
+    - key: rafay.dev/clusterName
+      value: hardik-qc-qcow2
   resourceQuotas: {}
