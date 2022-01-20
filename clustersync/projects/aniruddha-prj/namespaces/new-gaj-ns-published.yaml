@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: new-gaj-ns-published
+  project: aniruddha-prj
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+    - key: rafay.dev/clusterName
+      value: hardik-qc-qcow2
+  resourceQuotas: {}

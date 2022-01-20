@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-yamlingitrepo
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: working-yamls/nginx-workload.yaml
+      repository: gajanan-test
+      revision: main
+    options: {}
+    type: Yaml
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v0

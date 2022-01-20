@@ -1,0 +1,23 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-helminhelm-1
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      repository: default-bitnami
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    action: Deny
+    enabled: true
+  namespace: gaj-ns
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+  version: v1
