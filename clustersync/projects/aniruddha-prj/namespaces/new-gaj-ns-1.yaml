@@ -11,8 +11,46 @@ spec:
     pod: {}
   placement:
     labels:
-    - key: rafay.dev/clusterName
-      value: hardik-qc-mks-2
+    - key: rafay.dev/kubernetesProvider
+      value: MKS
+    - key: rafay.dev/ingress
+      value: enabled
+    - key: rafay.dev/kubevirt
+      value: disabled
+    - key: rafay.dev/clusterID
+      value: kgxyxem
+    - key: rafay.dev/clusterLocation
+      value: sanjose-us
+    - key: rafay.dev/k8sVersion
+      value: v1.22.2
     - key: rafay.dev/clusterName
       value: hardik-qc-qcow2
+    - key: rafay.dev/alerting
+      value: enabled
+    - key: rafay.dev/logging
+      value: enabled
+    - key: rafay.dev/clusterType
+      value: manual
+    - key: rafay.dev/monitoring
+      value: enabled
+    - key: rafay.dev/logging
+      value: disabled
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+    - key: rafay.dev/clusterID
+      value: 2lr0le2
+    - key: rafay.dev/k8sVersion
+      value: v1.21.5
+    - key: new1
+      value: cluster
+    - key: rafay.dev/alerting
+      value: disabled
+    - key: type
+      value: mks
+    - key: rafay.dev/ingress
+      value: disabled
+    - key: rafay.dev/monitoring
+      value: disabled
+    - key: env
+      value: qc
   resourceQuotas: {}
