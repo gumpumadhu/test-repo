@@ -1,0 +1,31 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: test-pipeline
+  project: aniruddha-prj
+spec:
+  active: false
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      destinationRepo:
+        path:
+          name: clustersync
+        repository: gajanan-test
+        revision: main
+      includedResources:
+      - name: '*'
+      systemToGitSync: true
+    name: systemtogit
+    type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '*/1 * * * *'
+      repo:
+        paths:
+        - name: clustersync
+        repository: gajanan-test
+        revision: main
+    name: synctrigger
+    type: Cron

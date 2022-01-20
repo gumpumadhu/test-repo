@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: test-wk
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/test-wk/nginx-9.5.4.tgz
+      valuesPaths:
+      - name: file://artifacts/test-wk/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: new-swagger-ns
+  placement:
+    selector: rafay.dev/clusterName=qc-gajanan-eks
+  version: test-wk-v1

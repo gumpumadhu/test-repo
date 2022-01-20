@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: asd
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://artifacts/asd/alertmanager-configMap.yaml
+      configuration:
+        name: file://artifacts/asd/alertmanager-configuration.yaml
+      secret:
+        name: file://artifacts/asd/alertmanager-secret.yaml
+      statefulset:
+        name: file://artifacts/asd/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: false
+  version: asd

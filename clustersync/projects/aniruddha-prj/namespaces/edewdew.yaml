@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: edewdew
+  project: aniruddha-prj
+spec:
+  artifact:
+    path:
+      name: file://artifacts/edewdew/edewdew.yaml

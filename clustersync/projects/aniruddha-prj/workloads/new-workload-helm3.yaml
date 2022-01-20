@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-helm3
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact: {}
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gaj-ns
+  placement:
+    selector: rafay.dev/clusterName in (hardik-qc-mks-2,hardik-qc-qcow2)
+  version: v1

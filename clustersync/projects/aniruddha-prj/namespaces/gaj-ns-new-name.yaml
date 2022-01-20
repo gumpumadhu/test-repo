@@ -1,0 +1,10 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: gaj-ns-new-name
+  project: aniruddha-prj
+spec:
+  limitRange:
+    container: {}
+    pod: {}
+  resourceQuotas: {}

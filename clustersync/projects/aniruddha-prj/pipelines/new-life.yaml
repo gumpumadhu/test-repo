@@ -1,0 +1,17 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: new-life
+  project: aniruddha-prj
+spec:
+  active: true
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      approvers:
+      - userName: gajanan@rafay.co
+      timeout: 0s
+      type: Email
+    name: new-stage
+    type: Approval

@@ -1,0 +1,13 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: efrasdfs
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact: {}
+    options: {}
+    type: Yaml
+  namespace: edewdew
+  sharing:
+    enabled: false

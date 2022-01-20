@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: gaj-test
+  project: aniruddha-prj
+spec:
+  active: true
+  cluster:
+    name: hardik-qc-mks-2
+  type: Cluster

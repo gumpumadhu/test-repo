@@ -1,0 +1,6 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: ns-name1
+  project: aniruddha-prj
+spec: {}

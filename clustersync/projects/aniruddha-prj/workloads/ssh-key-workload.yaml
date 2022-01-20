@@ -1,0 +1,16 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: ssh-key-workload
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact: {}
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: gaj-ns
+  placement:
+    selector: rafay.dev/clusterName=hardik-qc-mks-2
+  version: v1

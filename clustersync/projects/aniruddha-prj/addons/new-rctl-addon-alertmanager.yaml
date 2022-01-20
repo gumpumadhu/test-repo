@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-alertmanager
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://artifacts/new-rctl-addon-alertmanager/alertmanager-configMap.yaml
+      configuration:
+        name: file://artifacts/new-rctl-addon-alertmanager/alertmanager-configuration.yaml
+      secret:
+        name: file://artifacts/new-rctl-addon-alertmanager/alertmanager-secret.yaml
+      statefulset:
+        name: file://artifacts/new-rctl-addon-alertmanager/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: false
+  version: v1
