@@ -1,0 +1,16 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helminhelm
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact: {}
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: new-gaj-ns-1
+  placement: {}
