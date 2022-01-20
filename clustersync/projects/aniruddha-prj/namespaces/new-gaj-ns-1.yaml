@@ -51,6 +51,4 @@ spec:
       value: disabled
     - key: rafay.dev/k8sVersion
       value: v1.21.5
-    - key: new1
-      value: cluster
   resourceQuotas: {}
