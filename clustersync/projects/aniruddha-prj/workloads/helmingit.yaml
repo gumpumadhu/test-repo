@@ -22,3 +22,4 @@ spec:
   namespace: gajanan-ns
   placement:
     selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
+  version: helmingit-v1
