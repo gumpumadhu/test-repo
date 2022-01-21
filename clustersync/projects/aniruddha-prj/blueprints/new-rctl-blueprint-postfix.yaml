@@ -1,0 +1,34 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: new-rctl-blueprint-postfix
+  project: aniruddha-prj
+spec:
+  base:
+    name: default
+    version: snapshot - 2022-01-21T13:15:36Z
+  customAddons:
+  - name: new-rctl-addon-gitrepohelm
+    version: v1
+  - name: new-rctl-addon-yamlingit
+    version: v1
+  - name: new-rctl-addon-helm3chart
+    version: v1
+  - name: new-rctl-addon-helmrepo
+    version: v1
+  - name: new-rctl-addon-helm3multivalue
+    version: v1
+  - name: new-rctl-addon-nativeyaml
+    version: v1
+  - name: new-rctl-addon-alertmanager
+    version: v1
+  defaultAddons:
+    enableIngress: false
+    enableLogging: false
+    enableMonitoring: false
+    enableVM: false
+  drift:
+    enabled: false
+  sharing:
+    enabled: false
+  version: v1
