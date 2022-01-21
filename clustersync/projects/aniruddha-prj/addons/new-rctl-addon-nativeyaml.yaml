@@ -1,6 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Addon
 metadata:
+  description: description for addon version addonv1
   name: new-rctl-addon-nativeyaml
   project: aniruddha-prj
 spec:
@@ -13,3 +14,4 @@ spec:
   namespace: new-rctl-addon-ns
   sharing:
     enabled: false
+  version: v1
