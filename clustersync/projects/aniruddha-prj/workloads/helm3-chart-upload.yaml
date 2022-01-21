@@ -1,0 +1,19 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm3-chart-upload
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      valuesPaths:
+      - name: file://artifacts/helm3-chart-upload/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
