@@ -1,0 +1,20 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: yamlingit
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: working-yamls/nginx-workload.yaml
+      repository: gajanan-test
+      revision: main
+    options: {}
+    type: Yaml
+  drift:
+    action: Notify
+    enabled: true
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
