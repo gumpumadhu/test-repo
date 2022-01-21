@@ -1,0 +1,53 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    a1: v3
+    a2: v4
+  labels:
+    env: dev
+    priority: high
+    severity: low
+  name: publish-v2-ns-directly
+  project: aniruddha-prj
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container:
+      default:
+        cpu: "2"
+        memory: 2Gi
+      defaultRequest:
+        cpu: "2"
+        memory: 2Gi
+      max:
+        cpu: "2"
+        memory: 2Gi
+      min:
+        cpu: "2"
+        memory: 2Gi
+      ratio:
+        cpu: 1
+        memory: 1
+    pod:
+      max:
+        cpu: "3"
+        memory: 2Gi
+      min:
+        cpu: "1"
+        memory: 1Gi
+      ratio:
+        cpu: 1
+        memory: 1
+  placement:
+    labels:
+    - key: clusterName
+      value: gaj-ec2
+  resourceQuotas:
+    limits:
+      cpu: "1"
+      memory: 2Gi
+    requests:
+      cpu: "2"
+      memory: 2Gi
