@@ -1,0 +1,54 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: hiii
+  project: aniruddha-prj
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/ingress
+      value: enabled
+    - key: rafay.dev/k8sVersion
+      value: v1.22.2
+    - key: rafay.dev/clusterID
+      value: kgxyxem
+    - key: rafay.dev/clusterName
+      value: hardik-qc-qcow2
+    - key: rafay.dev/kubevirt
+      value: disabled
+    - key: rafay.dev/monitoring
+      value: enabled
+    - key: rafay.dev/clusterLocation
+      value: sanjose-us
+    - key: rafay.dev/alerting
+      value: enabled
+    - key: rafay.dev/logging
+      value: enabled
+    - key: rafay.dev/clusterType
+      value: manual
+    - key: rafay.dev/kubernetesProvider
+      value: MKS
+    - key: env
+      value: qc
+    - key: rafay.dev/clusterID
+      value: 2lr0le2
+    - key: type
+      value: mks
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+    - key: rafay.dev/logging
+      value: disabled
+    - key: rafay.dev/ingress
+      value: disabled
+    - key: rafay.dev/monitoring
+      value: disabled
+    - key: rafay.dev/alerting
+      value: disabled
+    - key: rafay.dev/k8sVersion
+      value: v1.21.5
+  resourceQuotas: {}
