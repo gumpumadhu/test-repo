@@ -1,0 +1,15 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: nativeyamlupload
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact: {}
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
