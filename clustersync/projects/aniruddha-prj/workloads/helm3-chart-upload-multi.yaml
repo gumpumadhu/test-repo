@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm3-chart-upload-multi
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      valuesPaths:
+      - name: file://artifacts/helm3-chart-upload-multi/nginx-values-3-with-rauto-automation-ecr-registry.yaml
+      - name: file://artifacts/helm3-chart-upload-multi/nginx-values-2-with-rauto-automation-ecr-registry.yaml
+      - name: file://artifacts/helm3-chart-upload-multi/nginx-values-1-with-rauto-automation-ecr-registry.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
