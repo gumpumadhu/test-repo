@@ -1,0 +1,19 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    a1: v3
+    a2: v4
+  name: gajanan-ns
+  project: aniruddha-prj
+spec:
+  drift:
+    enabled: false
+  limitRange: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: hardik-qc-mks-2
+    - key: rafay.dev/clusterName
+      value: gaj-nodetest-mks
+  resourceQuotas: {}
