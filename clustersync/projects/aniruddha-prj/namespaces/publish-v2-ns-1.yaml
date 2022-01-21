@@ -42,7 +42,7 @@ spec:
         memory: 1
   placement:
     labels:
-    - key: clusterName
+    - key: rafay.dev/clusterName
       value: hardik-qc-mks-2
   resourceQuotas:
     limits:
