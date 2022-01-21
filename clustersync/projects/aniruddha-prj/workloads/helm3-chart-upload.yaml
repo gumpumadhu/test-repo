@@ -6,6 +6,8 @@ metadata:
 spec:
   artifact:
     artifact:
+      chartPath:
+        name: file://artifacts/helm3-chart-upload/nginx-9.5.4.tgz
       valuesPaths:
       - name: file://artifacts/helm3-chart-upload/values.yaml
     options:
