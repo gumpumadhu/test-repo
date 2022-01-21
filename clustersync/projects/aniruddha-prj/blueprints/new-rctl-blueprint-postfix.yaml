@@ -8,6 +8,10 @@ spec:
     name: default
     version: snapshot - 2022-01-21T13:15:36Z
   customAddons:
+  - name: new-rctl-addon-nativeyaml
+    version: v1
+  - name: new-rctl-addon-alertmanager
+    version: v1
   - name: new-rctl-addon-gitrepohelm
     version: v1
   - name: new-rctl-addon-yamlingit
@@ -15,12 +19,6 @@ spec:
   - name: new-rctl-addon-helm3chart
     version: v1
   - name: new-rctl-addon-helmrepo
-    version: v1
-  - name: new-rctl-addon-helm3multivalue
-    version: v1
-  - name: new-rctl-addon-nativeyaml
-    version: v1
-  - name: new-rctl-addon-alertmanager
     version: v1
   defaultAddons:
     enableIngress: false
@@ -31,4 +29,4 @@ spec:
     enabled: false
   sharing:
     enabled: false
-  version: v1
+  version: v2
