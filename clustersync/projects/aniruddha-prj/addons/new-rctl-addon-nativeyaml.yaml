@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-nativeyaml
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-rctl-addon-nativeyaml/nginx.yaml
+    options: {}
+    type: Yaml
+  namespace: new-rctl-addon-ns
+  sharing:
+    enabled: false
