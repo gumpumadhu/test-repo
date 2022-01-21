@@ -1,25 +1,21 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: bp-v3
+  name: v3-bp-1
   project: aniruddha-prj
 spec:
   base:
     name: default
     version: snapshot - 2022-01-10T10:44:03Z
   customAddons:
-  - name: new-rctl-addon-gitrepohelm
+  - name: new-addon-helminhelmrepo
     version: v1
-  - name: new-rctl-addon-yamlingit
+  - name: new-addon-helmingitrepo
     version: v1
-  - name: new-rctl-addon-helm3chart
-    version: v1
-  - name: new-rctl-addon-helmrepo
-    version: v1
-  - name: new-rctl-addon-helm3multivalue
-    version: v1
-  - name: new-rctl-addon-nativeyaml
-    version: v1
+  - name: new-addon-yamlingitrepo
+    version: v0
+  - name: new-addon-nativeyaml
+    version: v0
   defaultAddons:
     enableIngress: true
     enableLogging: true
@@ -30,4 +26,4 @@ spec:
     enabled: true
   sharing:
     enabled: false
-  version: v4
+  version: v5
