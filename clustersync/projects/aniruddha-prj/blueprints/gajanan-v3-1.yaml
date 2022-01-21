@@ -1,0 +1,33 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: gajanan-v3-1
+  project: aniruddha-prj
+spec:
+  base:
+    name: default
+    version: snapshot - 2022-01-10T10:44:03Z
+  customAddons:
+  - name: new-addon-nativeyaml-v3
+    version: v0
+  - name: new-addon-yamlingitrepo-v3
+    version: v0
+  - name: new-addon-helminhelmrepo-v3
+    version: v1
+  - name: new-addon-helmingitrepo-v3
+    version: v1
+  - name: new-addon-helmchartwithvalues-v3
+    version: v0
+  - name: new-addon-helm3chartonly-v3
+    version: v0
+  defaultAddons:
+    enableIngress: true
+    enableLogging: true
+    enableMonitoring: true
+    enableVM: false
+  drift:
+    action: Deny
+    enabled: true
+  sharing:
+    enabled: false
+  version: v2
