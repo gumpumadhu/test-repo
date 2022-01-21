@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-helmrepo
+  project: aniruddha-prj
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.5.4
+      repository: default-bitnami
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: new-rctl-addon-ns
+  sharing:
+    enabled: false

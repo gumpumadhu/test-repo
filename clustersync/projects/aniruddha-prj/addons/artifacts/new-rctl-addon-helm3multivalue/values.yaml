@@ -1,0 +1,20 @@
+# Default values for pipeline-agent.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: rafaysystems/cd-agent
+  tag: master-26
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+priorityClassName: rafay-cluster-critical
+
+relayConfigData: "{\"agentID\":\"rx28oml\",\"relays\":[{\"token\":\"bt8fvn3d0cvjt0fhum5g\",\"addr\":\"api.sentry.rafay.local:11000\",\"endpoint\":\"*.core-connector.cdrelay.rafay.local:10012\",\"name\":\"rafay-core-cd-relay-agent\",\"templateToken\":\"bt8ecl3d0cvgqkaq9ik0\"}]}"
