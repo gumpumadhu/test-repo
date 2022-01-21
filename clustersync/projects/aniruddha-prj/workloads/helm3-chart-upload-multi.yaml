@@ -21,4 +21,4 @@ spec:
   namespace: gajanan-ns
   placement:
     selector: rafay.dev/clusterName in (gaj-nodetest-mks,hardik-qc-mks-2)
-  version: helm3-chart-upload-multi-v1
+  version: helm3-chart-upload-multi-v2
