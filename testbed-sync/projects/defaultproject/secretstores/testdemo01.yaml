@@ -1,0 +1,14 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretStore
+metadata:
+  name: testdemo01
+  project: defaultproject
+spec:
+  config:
+    vault:
+      clusters:
+      - authPath: ewgrhrwhqw
+        clusterName: tb98cl02
+        vaultNamespace: wrhbwrwrr
+      host: lweufgig
+  provider: Vault

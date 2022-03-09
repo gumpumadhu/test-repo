@@ -1,0 +1,13 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretSealer
+metadata:
+  annotations:
+    rafay.dev/description: tb98ssealer01
+  description: tb98ssealer01
+  name: tb98ssealer01
+  project: defaultproject
+spec:
+  sharing:
+    enabled: false
+  type: KubeSeal
+  version: v-2

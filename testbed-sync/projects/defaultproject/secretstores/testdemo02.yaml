@@ -1,0 +1,11 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretStore
+metadata:
+  name: testdemo02
+  project: defaultproject
+spec:
+  config:
+    vault:
+      clusters:
+      - authPath: authpath01
+  provider: Vault

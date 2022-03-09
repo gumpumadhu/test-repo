@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: tb98agent01
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: tb98cl01
+  type: Cluster
