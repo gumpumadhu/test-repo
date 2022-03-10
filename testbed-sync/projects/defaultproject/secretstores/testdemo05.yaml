@@ -5,5 +5,9 @@ metadata:
   project: defaultproject
 spec:
   config:
-    vault: {}
+    vault:
+      clusters:
+      - authPath: testpath
+        clusterName: gajanan-eks-10thmarch
+      host: https://gajanan-vault.dev.rafay-edge.net
   provider: Vault
