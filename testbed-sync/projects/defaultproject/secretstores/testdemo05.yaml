@@ -9,5 +9,5 @@ spec:
       clusters:
       - authPath: testpath
         clusterName: gajanan-eks-10thmarch
-      host: https://gajanan-vault.dev.rafay-edge.net
+      host: https://gajanan-vault-testbed.dev.rafay-edge.net
   provider: Vault
