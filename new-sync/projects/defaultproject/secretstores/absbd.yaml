@@ -5,10 +5,5 @@ metadata:
   project: defaultproject
 spec:
   config:
-    vault:
-      clusters:
-      - authPath: test
-        clusterName: tb103cl02
-      host: https://gajanan-vault-testbed.dev.rafay-edge.net
+    vault: {}
   provider: Vault
-
