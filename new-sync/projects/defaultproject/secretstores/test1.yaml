@@ -8,6 +8,6 @@ spec:
     vault:
       clusters:
       - authPath: test
-        clusterName: tb103cl01
+        clusterName: test
       host: asdfgdfgd
   provider: Vault
