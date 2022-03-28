@@ -1,0 +1,9 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretStore
+metadata:
+  name: new-snafd
+  project: defaultproject
+spec:
+  config:
+    vault: {}
+  provider: Vault

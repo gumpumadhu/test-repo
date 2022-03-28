@@ -1,0 +1,19 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  annotations:
+    rafay.dev/description: tb103repo01
+  description: tb103repo01
+  name: tb103repo01
+  project: defaultproject
+spec:
+  agents:
+  - name: tb103agent01
+  credentials:
+    password: sealed://credentials.password
+    username: ambar@rafay.co
+  endpoint: https://github.com/ambar-rafay/gitopstest.git
+  options: {}
+  secret:
+    name: file://artifacts/tb103repo01/sealed-secret.yaml
+  type: Git
