@@ -5,5 +5,9 @@ metadata:
   project: defaultproject
 spec:
   config:
-    vault: {}
+    vault:
+      clusters:
+      - authPath: test
+        clusterName: tb103cl01
+      host: asdfgdfgd
   provider: Vault
