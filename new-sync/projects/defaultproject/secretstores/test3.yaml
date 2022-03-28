@@ -1,0 +1,12 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: SecretStore
+metadata:
+  name: test3
+  project: defaultproject
+spec:
+  config:
+    vault:
+      clusters:
+      - authPath: test
+      host: https://gajanan-vault-testbed.dev.rafay-edge.net
+  provider: Vault
