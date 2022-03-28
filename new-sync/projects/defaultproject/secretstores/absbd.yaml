@@ -11,4 +11,4 @@ spec:
         clusterName: tb103cl02
       host: https://gajanan-vault-testbed.dev.rafay-edge.net
   provider: Vault
-  provider: Vault
+
