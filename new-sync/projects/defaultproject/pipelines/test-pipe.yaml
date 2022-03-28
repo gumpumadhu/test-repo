@@ -22,3 +22,13 @@ spec:
       systemToGitSync: true
     name: stage-1
     type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '* * * * *'
+      repo:
+        paths:
+        - name: new-sync
+        repository: gajanan-test
+        revision: main
+    name: new-cronjob
+    type: Cron
