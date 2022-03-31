@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: test
+  project: test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: gajanan-ec2-new
+    - key: rafay.dev/clusterName
+      value: gajanan-mks
+    - key: rafay.dev/clusterName
+      value: gajanan-new-ec2
+    - key: rafay.dev/clusterName
+      value: rds-update-sanity-gajanan-eks
+  resourceQuotas: {}

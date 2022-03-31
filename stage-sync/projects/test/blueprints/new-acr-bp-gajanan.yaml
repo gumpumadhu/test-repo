@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: new-acr-bp-gajanan
+  project: test
+spec:
+  base:
+    name: default
+    version: snapshot - 2021-10-26T04:31:47Z
+  customAddons:
+  - name: new-gajanan-acr-addon
+    version: v3
+  defaultAddons:
+    enableIngress: true
+    enableLogging: true
+    enableMonitoring: true
+    enableVM: false
+  drift:
+    enabled: false
+  opaPolicy: {}
+  placement: {}
+  sharing:
+    enabled: false
+  version: v3

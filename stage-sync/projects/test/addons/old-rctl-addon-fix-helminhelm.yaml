@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  description: description for v1
+  name: old-rctl-addon-fix-helminhelm
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.5.4
+      repository: default-bitnami
+      valuesPaths:
+      - name: file://artifacts/old-rctl-addon-fix-helminhelm/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: old-rctl-ns-fix
+  sharing:
+    enabled: false
+  version: v1

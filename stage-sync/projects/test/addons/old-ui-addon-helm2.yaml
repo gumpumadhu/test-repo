@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-ui-addon-helm2
+  project: test
+spec:
+  namespace: old-ui-ns
+  sharing:
+    enabled: false

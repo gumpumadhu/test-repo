@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-yamlingitrepo-v3
+  project: test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: working-yamls/nginx-workload.yaml
+      repository: gajanan-test-repo
+      revision: main
+    options: {}
+    type: Yaml
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v1

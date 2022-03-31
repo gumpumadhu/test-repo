@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm3-chart-upload
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/helm3-chart-upload/nginx-9.5.4.tgz
+      valuesPaths:
+      - name: file://artifacts/helm3-chart-upload/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gajanan-test-mks-1,gajanan-test-eks-1)
+  version: helm3-chart-upload-v2

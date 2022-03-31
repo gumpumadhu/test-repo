@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-alertmanager-v2
+  project: test
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://artifacts/new-rctl-addon-alertmanager-v2/alertmanager-configMap.yaml
+      configuration:
+        name: file://artifacts/new-rctl-addon-alertmanager-v2/alertmanager-configuration.yaml
+      secret:
+        name: file://artifacts/new-rctl-addon-alertmanager-v2/alertmanager-secret.yaml
+      statefulset:
+        name: file://artifacts/new-rctl-addon-alertmanager-v2/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: false
+  version: v1

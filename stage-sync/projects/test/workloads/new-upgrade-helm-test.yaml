@@ -1,0 +1,16 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-upgrade-helm-test
+  project: test
+spec:
+  artifact:
+    artifact: {}
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test
+  placement: {}

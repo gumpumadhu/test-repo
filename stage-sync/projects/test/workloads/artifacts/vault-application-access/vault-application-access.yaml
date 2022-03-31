@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-secrets
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault-secrets
+  template:
+    metadata:
+      labels:
+        app: vault-secrets
+      annotations:
+        rafay.dev/secretstore: vault
+        vault.secretstore.rafay.dev/role: "default"
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: alpine
+        image: alpine:latest
+        command: [ "/bin/ash", "-c", "--" ]
+        args: [ "while true; do env; sleep 30; done;" ]
+        securityContext:
+          allowPrivilegeEscalation: false
+        env:
+        - name: MYSQL_USERNAME
+          value: secretstore:vault:kv/data/myapp#data.githubtoken

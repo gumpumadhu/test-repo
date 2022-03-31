@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: acr-native-yaml
+  project: test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/acr-native-yaml/acr-native-yaml.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: new-ns
+  placement:
+    selector: rafay.dev/clusterName=rds-update-sanity-gajanan-eks
+  version: acr-native-yaml-v2

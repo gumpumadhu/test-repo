@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: vault-access-wz-file
+  project: test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/vault-access-wz-file/vault-access-wz-file.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: vault-ns
+  placement:
+    selector: rafay.dev/clusterName=stage-gajanan-29thmarch-mks
+  version: vault-access-wz-file-v2

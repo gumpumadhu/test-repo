@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-openshift-deploy-sdgds
+  annotations:
+    rafay.dev/registry-1: gajanan-acr
+  labels:
+    app: hello-openshift-sdfsdg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-openshift-sdfsdg
+  template:
+    metadata:
+      labels:
+        app: hello-openshift-sdfsdg
+    spec:
+      containers:
+      - name: hello-openshift-sdgfsg
+        image: gajanantest.azurecr.io/hello-openshift:latest
+        ports:
+        - containerPort: 80
+
+

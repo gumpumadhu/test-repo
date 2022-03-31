@@ -1,0 +1,21 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    a1: v3
+    a2: v4
+  name: ns-wait-publish-1
+  project: test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: gajanan-test-mks-1
+    - key: rafay.dev/clusterName
+      value: eks-1234
+  resourceQuotas: {}

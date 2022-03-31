@@ -1,0 +1,36 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: gajanan-test
+  project: test
+spec:
+  active: true
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      destinationRepo: {}
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      - name: '*'
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: stage-sync
+        repository: gajanan-t
+        revision: main
+      systemToGitSync: true
+    name: test
+    type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '* * * * *'
+      repo:
+        paths:
+        - name: stage-sync
+        repository: gajanan-t
+        revision: main
+    name: new-ns
+    type: Cron

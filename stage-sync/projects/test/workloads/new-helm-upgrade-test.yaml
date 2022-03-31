@@ -1,0 +1,14 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-helm-upgrade-test
+  project: test
+spec:
+  artifact:
+    artifact: {}
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: test
+  placement: {}

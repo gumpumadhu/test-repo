@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-1
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 8.2.0
+      repository: rafay-helm
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test
+  placement:
+    selector: rafay.dev/clusterName=gaja-aws
+  version: new-1-v3

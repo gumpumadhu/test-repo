@@ -1,0 +1,26 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: test
+  project: test
+spec:
+  active: true
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      approvers:
+      - userName: gajanan@rafay.co
+      timeout: 1m50s
+      type: Email
+    name: stage1
+    next:
+    - name: stage2
+    preConditions:
+    - config: ""
+      type: Expression
+    type: Approval
+  - config:
+      workload: workload-test
+    name: stage2
+    type: DeployWorkload

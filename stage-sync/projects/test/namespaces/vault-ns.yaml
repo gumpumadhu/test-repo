@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: vault-ns
+  project: test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: stage-gajanan-29thmarch-mks
+  resourceQuotas: {}

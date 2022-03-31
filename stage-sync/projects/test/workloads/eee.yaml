@@ -1,0 +1,23 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: eee
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: helm/busybox/
+      repository: gajanan-t
+      revision: master
+      valuesPaths:
+      - name: helm/busybox/values.yaml
+      - name: helm/busybox/values_locals.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test-test-test
+  placement: {}

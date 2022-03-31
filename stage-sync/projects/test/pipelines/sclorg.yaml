@@ -1,0 +1,17 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: sclorg
+  project: test
+spec:
+  active: false
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      approvers:
+      - userName: gajanan@rafay.co
+      timeout: 1m50s
+      type: Email
+    name: approvalStage
+    type: Approval

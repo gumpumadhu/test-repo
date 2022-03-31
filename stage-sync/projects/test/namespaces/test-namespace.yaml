@@ -1,0 +1,54 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    test-key: test-value
+  name: test-namespace
+  project: test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container:
+      default:
+        cpu: "1"
+        memory: 1Gi
+      defaultRequest:
+        cpu: "1"
+        memory: 1Gi
+      max:
+        cpu: "1"
+        memory: 1Gi
+      min:
+        cpu: "1"
+        memory: 1Gi
+      ratio:
+        cpu: 1
+        memory: 1
+    pod:
+      default:
+        cpu: "1"
+        memory: 1Gi
+      defaultRequest:
+        cpu: "1"
+        memory: 1Gi
+      max:
+        cpu: "1"
+        memory: 1Gi
+      min:
+        cpu: "1"
+        memory: 1Gi
+      ratio:
+        cpu: 1
+        memory: 1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: test-cluster
+  resourceQuotas:
+    limits:
+      cpu: "1"
+      memory: 1Gi
+    requests:
+      cpu: "1"
+      memory: 1Gi

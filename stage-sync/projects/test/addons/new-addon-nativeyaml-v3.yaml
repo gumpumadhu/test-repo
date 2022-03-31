@@ -1,0 +1,14 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-nativeyaml-v3
+  project: test
+spec:
+  artifact:
+    artifact: {}
+    options: {}
+    type: Yaml
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v1

@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  description: description for v1
+  name: new-rctl-addon-helmrepo-v2
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.5.4
+      repository: default-bitnami
+      valuesPaths:
+      - name: file://artifacts/new-rctl-addon-helmrepo-v2/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: new-rctl-addon-ns
+  sharing:
+    enabled: false
+  version: v1

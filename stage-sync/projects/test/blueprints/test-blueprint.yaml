@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: test-blueprint
+  project: test
+spec:
+  base:
+    name: minimal
+    version: snapshot - 2021-09-20T09:09:42Z
+  customAddons:
+  - name: add-on
+    version: v1
+  defaultAddons:
+    enableIngress: false
+    enableLogging: false
+    enableMonitoring: false
+    enableVM: false
+  drift:
+    enabled: false
+  opaPolicy: {}
+  placement: {}
+  sharing:
+    enabled: false
+  version: v1

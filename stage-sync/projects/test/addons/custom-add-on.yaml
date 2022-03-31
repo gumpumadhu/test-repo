@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: custom-add-on
+  project: test
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://artifacts/custom-add-on/alertmanager-configMap.yaml
+      configuration:
+        name: file://artifacts/custom-add-on/alertmanager-configuration.yaml
+      secret:
+        name: file://artifacts/custom-add-on/alertmanager-secret.yaml
+      statefulset:
+        name: file://artifacts/custom-add-on/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: false
+  version: v2

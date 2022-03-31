@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: gajanan-acr-add
+  project: test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/gajanan-acr-add/gajanan-acr-add.yaml
+    options: {}
+    type: Yaml
+  namespace: new-ns
+  sharing:
+    enabled: false
+  version: v2

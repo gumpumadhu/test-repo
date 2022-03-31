@@ -1,0 +1,17 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: uk-repo
+  project: test
+spec:
+  agents:
+  - {}
+  credentials:
+    password: sealed://credentials.password
+    username: gajanan@rafay.co
+  endpoint: https://github.com/gajanan-rafay/qa-automation-applications
+  options:
+    maxRetires: 1
+  secret:
+    name: file://artifacts/uk-repo/sealed-secret.yaml
+  type: Git

@@ -1,0 +1,17 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: new-helm-repo
+  project: test
+spec:
+  agents:
+  - {}
+  credentials:
+    password: sealed://credentials.password
+    username: gajanan@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options:
+    maxRetires: 1
+  secret:
+    name: file://artifacts/new-helm-repo/sealed-secret.yaml
+  type: Git

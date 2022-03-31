@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-sclorg-nodejs
+  project: test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-sclorg-nodejs/new-sclorg-nodejs.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: test
+  placement:
+    selector: rafay.dev/clusterName=gaj-test-eks
+  version: new-sclorg-nodejs-v2

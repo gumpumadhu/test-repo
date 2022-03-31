@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: gajanan-test-agent
+  project: test
+spec:
+  active: true
+  cluster:
+    name: stage-gajanan-31stmarch-mks-1
+  type: Cluster

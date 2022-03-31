@@ -1,0 +1,24 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workload-test
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: workloads/helm3/nginx_webserver/nginx-8.2.0-rafay.tgz
+      repository: uk-repo
+      revision: master
+      valuesPaths:
+      - name: workloads/helm3/nginx_webserver/nginx-values-working.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test
+  placement:
+    selector: rafay.dev/clusterName=gaja-aws
+  version: workload-test-v2

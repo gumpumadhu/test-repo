@@ -1,0 +1,15 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-helm3multivalue-v2
+  project: test
+spec:
+  artifact:
+    artifact: {}
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: new-rctl-addon-ns
+  sharing:
+    enabled: false

@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: vault-helm
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/vault-helm/vault-helm-0.5.0.tar.gz
+      valuesPaths:
+      - name: file://artifacts/vault-helm/vault-helm-050-values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: vault-ns
+  placement:
+    selector: rafay.dev/clusterName=stage-gajanan-29thmarch-mks
+  version: vault-helm-v1

@@ -1,0 +1,25 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helmingit
+  project: test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: working-helm/bitnami-nginx/nginx-9.5.4.tgz
+      repository: gajanan-test-repo
+      revision: main
+      valuesPaths:
+      - name: working-helm/bitnami-nginx/nginx/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    action: Notify
+    enabled: true
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gajanan-test-mks-1,gajanan-test-eks-1)
+  version: helmingit-v6
