@@ -1,0 +1,16 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: rauto-git-epo
+  project: test
+spec:
+  agents:
+  - {}
+  credentials:
+    password: sealed://credentials.password
+    username: automation-user@rafay.co
+  endpoint: https://github.com/RafaySystems/qa-automation-applications
+  options: {}
+  secret:
+    name: file://artifacts/rauto-git-epo/sealed-secret.yaml
+  type: Git
