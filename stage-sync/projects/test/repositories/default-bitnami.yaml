@@ -1,0 +1,10 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: default-bitnami
+  project: test
+spec:
+  endpoint: https://charts.bitnami.com/bitnami
+  options:
+    maxRetires: 1
+  type: Helm
