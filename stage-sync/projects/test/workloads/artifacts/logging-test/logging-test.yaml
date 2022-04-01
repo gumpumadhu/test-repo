@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: logging-test
+  annotations:
+    rafay.dev/logging: gajanan-s3
 spec:
   replicas: 1
   selector:
@@ -11,8 +13,6 @@ spec:
     metadata:
       labels:
         app: logging-test
-      annotations:
-        rafay.dev/logging: gajanan-s3
     spec:
       containers:
       - name: alpine
