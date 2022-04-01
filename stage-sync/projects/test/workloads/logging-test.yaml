@@ -5,10 +5,14 @@ metadata:
   project: test
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      paths:
+      - name: file://artifacts/logging-test/logging-test.yaml
     options: {}
     type: Yaml
   drift:
     enabled: false
   namespace: gajanan-ns-test
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterName=stage-gajanan-31stmarch-mks-1
+  version: logging-test-v1

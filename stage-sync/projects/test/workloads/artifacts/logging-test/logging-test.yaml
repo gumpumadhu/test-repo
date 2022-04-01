@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logging-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logging-test
+  template:
+    metadata:
+      labels:
+        app: logging-test
+      annotations:
+        rafay.dev/logging: gajanan-s3
+    spec:
+      containers:
+      - name: alpine
+        image: alpine:latest
+        command: [ "/bin/ash", "-c", "--" ]
+        args: [ "while true; do env; sleep 30; done;" ]
+        securityContext:
+          allowPrivilegeEscalation: false
+        env:
+        - name: MYSQL_USERNAME
+          value: gajanan-secret
