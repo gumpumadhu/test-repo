@@ -1,0 +1,16 @@
+apiVersion: integrations.k8smgmt.io/v3
+kind: Repository
+metadata:
+  name: gajanan-test-repo
+  project: test
+spec:
+  agents:
+  - {}
+  credentials:
+    password: sealed://credentials.password
+    username: gajanan@rafay.co
+  endpoint: https://github.com/gajanan-rafay/test-repo
+  options: {}
+  secret:
+    name: file://artifacts/gajanan-test-repo/sealed-secret.yaml
+  type: Git
