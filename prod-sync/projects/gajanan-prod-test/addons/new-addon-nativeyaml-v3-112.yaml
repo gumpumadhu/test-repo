@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-nativeyaml-v3-112
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-addon-nativeyaml-v3-112/nginx-workload.yaml
+    options: {}
+    type: Yaml
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v1
