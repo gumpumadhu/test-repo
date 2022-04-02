@@ -17,4 +17,6 @@ spec:
       value: gajanan-prod-test-eks-1
     - key: rafay.dev/clusterName
       value: gajanan-prod-test-mks-1
+    - key: rafay.dev/clusterName
+      value: prod-gajanan-mks-2ndapril
   resourceQuotas: {}
