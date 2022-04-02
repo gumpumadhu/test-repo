@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: acr-helm-workload
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/acr-helm-workload/nginx-9.5.8.tgz
+      valuesPaths:
+      - name: file://artifacts/acr-helm-workload/values.yml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: ns-1
+  placement:
+    selector: rafay.dev/clusterName=new-gajanan-prod-eks
+  version: acr-helm-workload-v3

@@ -1,0 +1,28 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-helmingit-v3-1
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: working-helm/helm-multi-values/nginx-8.2.0-rafay.tgz
+      repository: gajanan-test
+      revision: main
+      valuesPaths:
+      - name: working-helm/helm-multi-values/nginx-values-1-with-rauto-automation-ecr-registry.yaml,working-helm/helm-multi-values/nginx-values-3-with-rauto-automation-ecr-registry.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gaja-ns-1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: gajanan-prod-test-mks-1
+    - key: rafay.dev/clusterName
+      value: gajanan-prod-test-eks-1
+  version: v1

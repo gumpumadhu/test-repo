@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-helm3chartonly-v3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/new-addon-helm3chartonly-v3/nginx-9.5.4.tgz
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v1

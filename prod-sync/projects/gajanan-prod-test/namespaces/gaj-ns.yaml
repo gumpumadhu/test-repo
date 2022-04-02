@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: gaj-ns
+  project: gajanan-prod-test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: gajanan-prod-test-ec2-1
+    - key: rafay.dev/clusterName
+      value: gajanan-prod-test-eks-1
+    - key: rafay.dev/clusterName
+      value: gajanan-prod-test-mks-1
+  resourceQuotas: {}

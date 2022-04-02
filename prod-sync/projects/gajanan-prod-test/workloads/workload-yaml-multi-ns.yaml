@@ -1,0 +1,17 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: workload-yaml-multi-ns
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/workload-yaml-multi-ns/workload-yaml-multi-ns.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: new-ns-100
+  placement:
+    selector: rafay.dev/clusterName in (new-prod-mks-gajanan,prod-test-gajanan)

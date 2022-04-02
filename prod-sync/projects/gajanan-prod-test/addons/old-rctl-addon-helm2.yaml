@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-rctl-addon-helm2
+  project: gajanan-prod-test
+spec:
+  namespace: old-rctl-ns
+  sharing:
+    enabled: false

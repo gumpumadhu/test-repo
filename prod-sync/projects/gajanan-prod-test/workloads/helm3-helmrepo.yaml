@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm3-helmrepo
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.4.0
+      repository: default-bitnami
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: new-ns-gajanan
+  placement:
+    selector: rafay.dev/clusterName=hardik-123
+  version: helm3-helmrepo-v1

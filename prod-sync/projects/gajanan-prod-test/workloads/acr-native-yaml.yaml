@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: acr-native-yaml
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/acr-native-yaml/acr-native-yaml.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: ns-1
+  placement:
+    selector: rafay.dev/clusterName=new-gajanan-prod-eks
+  version: acr-native-yaml-v3

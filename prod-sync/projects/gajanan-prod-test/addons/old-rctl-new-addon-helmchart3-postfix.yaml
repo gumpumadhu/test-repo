@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-rctl-new-addon-helmchart3-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/old-rctl-new-addon-helmchart3-postfix/nginx-9.5.4.tgz
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: old-rctl-ns-fix-postfix
+  sharing:
+    enabled: false
+  version: v2

@@ -1,0 +1,23 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm-nginx-with-all
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.9.7
+      repository: default-bitnami
+      valuesPaths:
+      - name: file://artifacts/helm-nginx-with-all/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test-import-app
+  placement:
+    selector: rafay.dev/clusterName=imported-rancher
+  version: helm-nginx-with-all-v2

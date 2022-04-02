@@ -1,0 +1,19 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-consul-v3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: consul
+      chartVersion: 1.1.1
+      repository: hasicorp
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: consul
+  sharing:
+    enabled: false
+  version: v1

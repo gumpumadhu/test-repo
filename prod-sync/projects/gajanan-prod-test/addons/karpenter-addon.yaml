@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: karpenter-addon
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: karpenter
+      repository: karpenter-repo
+      valuesPaths:
+      - name: file://artifacts/karpenter-addon/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: karpenter
+  sharing:
+    enabled: false
+  version: v1

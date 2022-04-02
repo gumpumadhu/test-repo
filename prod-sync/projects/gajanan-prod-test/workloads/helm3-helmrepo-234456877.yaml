@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm3-helmrepo-234456877
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/helm3-helmrepo-234456877/nginx-8.2.0-rafay.tgz
+      valuesPaths:
+      - name: file://artifacts/helm3-helmrepo-234456877/nginx-values-3-with-rauto-automation-ecr-registry.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: new-ns-gajanan
+  placement:
+    selector: rafay.dev/clusterName=hardik-123
+  version: helm3-helmrepo-234456877-v1

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-openshift-deploy
+  annotations:
+    rafay.dev/registry-1: "gajanan-acr"
+  labels:
+    app: hello-openshift-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-openshift-test
+  template:
+    metadata:
+      labels:
+        app: hello-openshift-test
+    spec:
+      containers:
+      - name: hello-openshift-test
+        image: gajanantest.azurecr.io/hello-openshift:latest
+        ports:
+        - containerPort: 80
+
+

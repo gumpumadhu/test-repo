@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-test
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-workload-test/new-workload-test.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: new-ns-100
+  placement:
+    selector: rafay.dev/clusterName=prod-test-gajanan
+  version: new-workload-test-v1

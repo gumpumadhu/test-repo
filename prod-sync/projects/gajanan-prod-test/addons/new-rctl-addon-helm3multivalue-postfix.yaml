@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-helm3multivalue-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/new-rctl-addon-helm3multivalue-postfix/mysql-1.6.7.tgz
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: new-rctl-addon-ns-postfix
+  sharing:
+    enabled: false
+  version: v3

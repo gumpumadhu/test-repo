@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: yamlingit-v2
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: working-yamls/nginx-workload.yaml
+      repository: gajanan-test
+      revision: main
+    options: {}
+    type: Yaml
+  drift:
+    action: Notify
+    enabled: true
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (gajanan-prod-test-mks-1,gajanan-prod-test-eks-1)
+  version: yamlingit-v2-v1

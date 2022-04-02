@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: acr-new-addon-helm3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/acr-new-addon-helm3/nginx-9.5.8.tgz
+      valuesPaths:
+      - name: file://artifacts/acr-new-addon-helm3/values.yml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: namespace-12
+  sharing:
+    enabled: false
+  version: v2

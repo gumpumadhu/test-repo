@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: nativeyamlupload-v2-prod
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/nativeyamlupload-v2-prod/nativeyamlupload-v2-prod.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName in (prod-gajanan-eks-26thfeb,prod-gajanan-mks-26thfeb)
+  version: nativeyamlupload-v2-prod-v1

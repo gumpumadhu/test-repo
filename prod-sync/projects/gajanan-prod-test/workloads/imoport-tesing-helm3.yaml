@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: imoport-tesing-helm3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      chartVersion: 9.9.7
+      repository: default-bitnami
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: test-import-app
+  placement:
+    selector: rafay.dev/clusterName=imported-rancher
+  version: imoport-tesing-helm3-v2

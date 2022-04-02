@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: acr-workload-wizard
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/acr-workload-wizard/acr-workload-wizard.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: ns-1
+  placement:
+    selector: rafay.dev/clusterName=new-gajanan-prod-eks
+  version: acr-workload-wizard-v3

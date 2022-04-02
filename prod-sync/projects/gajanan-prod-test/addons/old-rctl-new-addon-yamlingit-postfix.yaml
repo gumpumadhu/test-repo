@@ -1,0 +1,18 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-rctl-new-addon-yamlingit-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: working-yamls/nginx-workload.yaml
+      repository: gajanan-test-repo
+      revision: main
+    options: {}
+    type: Yaml
+  namespace: old-rctl-ns-fix-postfix
+  sharing:
+    enabled: false
+  version: v1

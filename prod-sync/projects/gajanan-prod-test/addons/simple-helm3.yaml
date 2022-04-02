@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: simple-helm3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      valuesPaths:
+      - name: file://artifacts/simple-helm3/nginx-9.5.4.tgz
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: simple-ns
+  sharing:
+    enabled: true
+    projects:
+    - name: amu
+    - name: data
+    - name: defaultproject
+  version: v11

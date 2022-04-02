@@ -1,0 +1,17 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  description: description for addon version addonv1
+  name: old-rctl-new-addon-nativeyaml-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/old-rctl-new-addon-nativeyaml-postfix/old-rctl-new-addon-nativeyaml-postfix.yaml
+    options: {}
+    type: Yaml
+  namespace: old-rctl-ns-fix-postfix
+  sharing:
+    enabled: false
+  version: v1

@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-ui-helm2
+  project: gajanan-prod-test
+spec:
+  namespace: old-ui-ns
+  sharing:
+    enabled: false

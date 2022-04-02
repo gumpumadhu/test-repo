@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  name: new-ns-create
+  project: gajanan-prod-test
+spec:
+  artifact:
+    path:
+      name: file://artifacts/new-ns-create/new-ns-create.yaml

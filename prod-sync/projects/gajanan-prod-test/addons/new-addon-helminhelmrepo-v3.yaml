@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-addon-helminhelmrepo-v3
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      repository: default-bitnami
+      valuesPaths:
+      - name: file://artifacts/new-addon-helminhelmrepo-v3/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: gaj-ns
+  sharing:
+    enabled: false
+  version: v1

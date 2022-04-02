@@ -1,0 +1,47 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: blueprint-v2
+  project: gajanan-prod-test
+spec:
+  base:
+    name: default
+    version: 1.11.0
+  customAddons:
+  - name: new-rctl-addon-yamlingit-v2
+    version: v1
+  - name: new-rctl-addon-helm3chart-v2
+    version: v1
+  - name: new-rctl-addon-helmrepo-v2
+    version: v1
+  - name: new-rctl-addon-nativeyaml-v2
+    version: v1
+  - name: new-rctl-addon-alertmanager-v2
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLogging: false
+    enableMonitoring: true
+    enableVM: false
+    monitoring:
+      helmExporter:
+        discovery: {}
+        enabled: true
+      kubeStateMetrics:
+        discovery: {}
+        enabled: true
+      metricsServer:
+        enabled: true
+      nodeExporter:
+        discovery: {}
+        enabled: true
+      prometheusAdapter:
+        enabled: true
+      resources: {}
+  drift:
+    enabled: false
+  opaPolicy: {}
+  placement: {}
+  sharing:
+    enabled: false
+  version: v5

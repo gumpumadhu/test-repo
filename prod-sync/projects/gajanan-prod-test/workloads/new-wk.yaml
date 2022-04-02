@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-wk
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-wk/new-wk.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: namespace-12
+  placement:
+    selector: rafay.dev/clusterName in (eks-cluster-gajanan-prod-testing,new-prod-mks-gajanan,prod-test-gajanan)
+  version: new-wk-v1

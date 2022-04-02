@@ -1,0 +1,20 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-alertmanager-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      configmap:
+        name: file://artifacts/new-rctl-addon-alertmanager-postfix/alertmanager-configMap.yaml
+      configuration:
+        name: file://artifacts/new-rctl-addon-alertmanager-postfix/alertmanager-configuration.yaml
+      secret:
+        name: file://artifacts/new-rctl-addon-alertmanager-postfix/alertmanager-secret.yaml
+      statefulset:
+        name: file://artifacts/new-rctl-addon-alertmanager-postfix/alertmanager-statefulSet.yaml
+    type: AlertManager
+  sharing:
+    enabled: false
+  version: v1

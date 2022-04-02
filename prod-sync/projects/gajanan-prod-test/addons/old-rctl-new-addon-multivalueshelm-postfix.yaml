@@ -1,0 +1,22 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  description: description for addon version helmchartv1
+  name: old-rctl-new-addon-multivalueshelm-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/old-rctl-new-addon-multivalueshelm-postfix/mysql-1.6.7.tgz
+      valuesPaths:
+      - name: file://artifacts/old-rctl-new-addon-multivalueshelm-postfix/values-rafay-wizard.yaml
+      - name: file://artifacts/old-rctl-new-addon-multivalueshelm-postfix/values.yaml
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  namespace: old-rctl-ns-fix-postfix
+  sharing:
+    enabled: false
+  version: v1

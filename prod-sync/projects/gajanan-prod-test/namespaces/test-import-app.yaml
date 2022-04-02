@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Namespace
+metadata:
+  annotations:
+    cattle.io/status: '{"Conditions":[{"Type":"ResourceQuotaInit","Status":"True","Message":"","LastUpdateTime":"2022-03-16T13:15:24Z"},{"Type":"InitialRolesPopulated","Status":"True","Message":"","LastUpdateTime":"2022-03-16T13:15:25Z"}]}'
+    field.cattle.io/containerDefaultResourceLimit: '{}'
+    field.cattle.io/projectId: c-skxkh:p-hv4bq
+    lifecycle.cattle.io/create.namespace-auth: "true"
+  labels:
+    field.cattle.io/projectId: p-hv4bq
+    kubernetes.io/metadata.name: test-import-app
+  name: test-import-app
+  project: gajanan-prod-test
+spec:
+  drift:
+    enabled: false
+  limitRange:
+    container: {}
+    pod: {}
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: auto-mks-gajanan-ec2
+  resourceQuotas: {}

@@ -1,0 +1,9 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: old-swagger-addon-helm2chart
+  project: gajanan-prod-test
+spec:
+  namespace: old-swagger-ns
+  sharing:
+    enabled: false

@@ -1,0 +1,18 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: simple-nginx
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/simple-nginx/simple-nginx.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: test-test-test
+  placement:
+    selector: rafay.dev/clusterName=auto-mks-gajanan-ec2
+  version: simple-nginx-v1

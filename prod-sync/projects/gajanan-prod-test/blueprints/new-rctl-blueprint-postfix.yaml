@@ -1,0 +1,24 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: new-rctl-blueprint-postfix
+  project: gajanan-prod-test
+spec:
+  base:
+    name: default
+    version: snapshot - 2021-12-23T05:19:04Z
+  customAddons:
+  - name: new-rctl-addon-helmrepo-postfix
+    version: v8
+  defaultAddons:
+    enableIngress: false
+    enableLogging: true
+    enableMonitoring: false
+    enableVM: false
+  drift:
+    enabled: false
+  opaPolicy: {}
+  placement: {}
+  sharing:
+    enabled: false
+  version: v6

@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: new-rctl-addon-nativeyaml-postfix
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/new-rctl-addon-nativeyaml-postfix/nginx-values-3-with-rauto-automation-ecr-registry.yaml
+    options: {}
+    type: Yaml
+  namespace: new-rctl-addon-ns-postfix
+  sharing:
+    enabled: false
+  version: v3
