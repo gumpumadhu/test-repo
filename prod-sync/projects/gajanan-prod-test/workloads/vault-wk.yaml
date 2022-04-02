@@ -5,10 +5,14 @@ metadata:
   project: gajanan-prod-test
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      paths:
+      - name: file://artifacts/vault-wk/vault-wk.yaml
     options: {}
     type: Yaml
   drift:
     enabled: false
   namespace: vault-ns
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterName=prod-gajanan-mks-2ndapril
+  version: vault-wk-v1
