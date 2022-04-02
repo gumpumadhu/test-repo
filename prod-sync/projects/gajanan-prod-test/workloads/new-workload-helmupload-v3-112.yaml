@@ -1,0 +1,21 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-helmupload-v3-112
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/new-workload-helmupload-v3-112/nginx-8.2.0-rafay.tgz
+    options:
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gaja-ns-1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: prod-gajanan-mks-2ndapril
+  version: v1

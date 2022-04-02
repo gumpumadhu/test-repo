@@ -1,0 +1,20 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: ssh-key-workload-v3-112
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/ssh-key-workload-v3-112/ssh.yaml
+    options: {}
+    type: Yaml
+  drift:
+    enabled: false
+  namespace: gaja-ns-1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: prod-gajanan-mks-2ndapril
+  version: v1

@@ -1,0 +1,23 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: new-workload-helminhelm-v3-112
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartName: nginx
+      repository: default-bitnami
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    action: Deny
+    enabled: true
+  namespace: gaja-ns-1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: prod-gajanan-mks-2ndapril
+  version: v1

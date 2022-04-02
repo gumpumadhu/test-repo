@@ -1,0 +1,22 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: helm2-workload-v3-112
+  project: gajanan-prod-test
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: file://artifacts/helm2-workload-v3-112/nginx-chart-0.1.0.tgz
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gaja-ns-1
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: prod-gajanan-mks-2ndapril
+  version: v1
