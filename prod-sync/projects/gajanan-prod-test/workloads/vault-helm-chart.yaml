@@ -19,3 +19,4 @@ spec:
   namespace: vault-ns
   placement:
     selector: rafay.dev/clusterName=prod-gajanan-mks-2ndapril
+  version: vault-helm-chart-v2
