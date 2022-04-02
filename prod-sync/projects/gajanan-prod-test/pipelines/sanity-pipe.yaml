@@ -4,7 +4,7 @@ metadata:
   name: sanity-pipe
   project: gajanan-prod-test
 spec:
-  active: false
+  active: true
   sharing:
     enabled: false
   stages:
@@ -22,3 +22,13 @@ spec:
       systemToGitSync: true
     name: stage-1
     type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '* * * * *'
+      repo:
+        paths:
+        - name: prod-sync
+        repository: gajanan-test
+        revision: main
+    name: test-triggger
+    type: Cron
