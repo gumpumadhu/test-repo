@@ -14,4 +14,4 @@ spec:
     type: Addon
   type: Yaml
   valuesPath:
-    name: file://artifacts/testetsts/testetsts.yaml
+    name: file://artifacts/created-git/created-git.yaml
