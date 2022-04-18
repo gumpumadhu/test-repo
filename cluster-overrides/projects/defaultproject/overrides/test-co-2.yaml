@@ -9,5 +9,9 @@ metadata:
 spec:
   placement: {}
   resource:
+    selector:
+      name: test-addon
     type: Addon
   type: Yaml
+  valuesPath:
+    name: file://artifacts/test-co-2/test-co-2.yaml
