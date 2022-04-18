@@ -1,0 +1,24 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: test-pipeline
+  project: defaultproject
+spec:
+  active: false
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      destinationRepo: {}
+      gitToSystemSync: true
+      includedResources:
+      - name: '*'
+      sourceAsDestination: true
+      sourceRepo:
+        path:
+          name: cluster-overrides
+        repository: gajanan-test
+        revision: main
+      systemToGitSync: true
+    name: new-pipe
+    type: SystemSync
