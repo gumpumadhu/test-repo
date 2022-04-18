@@ -4,7 +4,7 @@ metadata:
   labels:
     rafay.dev/overrideScope: clusterLabels
     rafay.dev/overrideType: valuesFile
-  name: test-addon
+  name: test-addon-one
   project: defaultproject
 spec:
   placement: {}
