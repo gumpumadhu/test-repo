@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: test-addon
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/test-addon/nginx-workload.yaml
+    options: {}
+    type: Yaml
+  namespace: default-rafay
+  sharing:
+    enabled: false
+  version: v1
