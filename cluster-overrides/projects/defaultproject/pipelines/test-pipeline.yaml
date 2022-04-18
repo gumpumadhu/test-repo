@@ -22,3 +22,13 @@ spec:
       systemToGitSync: true
     name: new-pipe
     type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '* * * * *'
+      repo:
+        paths:
+        - name: cluster-overrides
+        repository: gajanan-test
+        revision: main
+    name: trigger-gajanan
+    type: Cron
