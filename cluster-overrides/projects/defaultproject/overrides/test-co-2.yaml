@@ -1,0 +1,13 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Override
+metadata:
+  labels:
+    rafay.dev/overrideScope: clusterLabels
+    rafay.dev/overrideType: valuesFile
+  name: test-co-2
+  project: defaultproject
+spec:
+  placement: {}
+  resource:
+    type: Addon
+  type: Yaml
