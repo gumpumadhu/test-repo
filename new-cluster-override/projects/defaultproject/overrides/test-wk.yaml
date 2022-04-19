@@ -1,0 +1,17 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Override
+metadata:
+  labels:
+    rafay.dev/overrideScope: clusterLabels
+    rafay.dev/overrideType: valuesFile
+  name: test-wk
+  project: defaultproject
+spec:
+  placement: {}
+  resource:
+    selector:
+      name: test-helm3
+    type: Workload
+  type: Yaml
+  valuesPath:
+    name: file://artifacts/test-wk/test-wk.yaml

@@ -10,8 +10,6 @@ spec:
   stages:
   - config:
       destinationRepo: {}
-      excludedResources:
-      - name: Override
       gitToSystemSync: true
       includedResources:
       - name: '*'
