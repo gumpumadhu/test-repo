@@ -17,4 +17,6 @@ spec:
   drift:
     enabled: false
   namespace: gajanan-ns
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterName=gajanan-tb-mks-co
+  version: test-helm3-v1
