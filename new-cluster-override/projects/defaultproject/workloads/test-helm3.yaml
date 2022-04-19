@@ -9,8 +9,8 @@ spec:
       chartPath:
         name: file://artifacts/test-helm3/nginx-9.5.4.tgz
       valuesPaths:
-      - name: file://artifacts/test-helm3/nginx-values-3-with-rauto-automation-ecr-registry.yaml
       - name: file://artifacts/test-helm3/values.yaml
+      - name: file://artifacts/test-helm3/nginx-values-3-with-rauto-automation-ecr-registry.yaml
     options:
       maxHistory: 10
       timeout: 5m0s
@@ -18,4 +18,6 @@ spec:
   drift:
     enabled: false
   namespace: default-rafay
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterName=gajanan-tb-mks-co
+  version: test-helm3-v1
