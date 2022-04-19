@@ -5,7 +5,13 @@ metadata:
   project: defaultproject
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartPath:
+        name: working-helm/bitnami-nginx/nginx-9.5.4.tgz
+      repository: gajanan-test
+      revision: main
+      valuesPaths:
+      - {}
     options:
       maxHistory: 10
       timeout: 5m0s
