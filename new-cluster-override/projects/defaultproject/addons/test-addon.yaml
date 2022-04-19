@@ -13,4 +13,4 @@ spec:
   namespace: default-rafay
   sharing:
     enabled: false
-  version: v1
+  version: v2
