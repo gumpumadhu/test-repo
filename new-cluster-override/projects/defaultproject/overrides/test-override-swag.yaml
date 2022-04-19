@@ -1,0 +1,20 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Override
+metadata:
+  labels:
+    rafay.dev/overrideScope: clusterLabels
+    rafay.dev/overrideType: valuesFile
+  name: test-override-swag
+  project: defaultproject
+spec:
+  placement:
+    labels:
+    - key: rafay.dev/clusterName
+      value: test-cluster
+  resource:
+    selector:
+      name: test
+    type: Addon
+  type: Yaml
+  valuesPath:
+    name: file://artifacts/test-override-swag/test-override-swag.yaml
