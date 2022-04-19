@@ -5,7 +5,12 @@ metadata:
   project: defaultproject
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartPath:
+        name: file://artifacts/test-helm3/nginx-9.5.4.tgz
+      valuesPaths:
+      - name: file://artifacts/test-helm3/nginx-values-3-with-rauto-automation-ecr-registry.yaml
+      - name: file://artifacts/test-helm3/values.yaml
     options:
       maxHistory: 10
       timeout: 5m0s
