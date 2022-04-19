@@ -1,0 +1,24 @@
+apiVersion: apps.k8smgmt.io/v3
+kind: Workload
+metadata:
+  name: test-helm-gitrepo
+  project: defaultproject
+spec:
+  artifact:
+    artifact:
+      chartPath:
+        name: working-helm/bitnami-nginx/nginx-9.5.4.tgz
+      repository: gajanan-test
+      revision: main
+      valuesPaths:
+      - {}
+    options:
+      maxHistory: 10
+      timeout: 5m0s
+    type: Helm
+  drift:
+    enabled: false
+  namespace: gajanan-ns
+  placement:
+    selector: rafay.dev/clusterName=gajanan-tb-mks-co
+  version: test-helm-gitrepo-v1

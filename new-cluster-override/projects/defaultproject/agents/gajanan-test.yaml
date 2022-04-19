@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: gajanan-test
+  project: defaultproject
+spec:
+  active: true
+  cluster:
+    name: gajanan-tb-mks-co
+  type: Cluster

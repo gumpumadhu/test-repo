@@ -1,0 +1,23 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Pipeline
+metadata:
+  name: test-nishant
+  project: defaultproject
+spec:
+  active: false
+  sharing:
+    enabled: false
+  stages:
+  - config:
+      destinationRepo: {}
+      excludedResources:
+      - name: Override
+      gitToSystemSync: true
+      includedResources:
+      - name: Namespace
+      sourceAsDestination: true
+      sourceRepo:
+        repository: gajanan-test
+        revision: main
+    name: test
+    type: SystemSync
