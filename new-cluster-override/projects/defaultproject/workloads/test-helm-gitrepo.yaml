@@ -1,14 +1,11 @@
 apiVersion: apps.k8smgmt.io/v3
 kind: Workload
 metadata:
-  name: test-helmrepo
+  name: test-helm-gitrepo
   project: defaultproject
 spec:
   artifact:
-    artifact:
-      chartName: nginx
-      chartVersion: 9.5.4
-      repository: default-bitnami
+    artifact: {}
     options:
       maxHistory: 10
       timeout: 5m0s
@@ -16,6 +13,4 @@ spec:
   drift:
     enabled: false
   namespace: gajanan-ns
-  placement:
-    selector: rafay.dev/clusterName=gajanan-tb-mks-co
-  version: test-helmrepo-v1
+  placement: {}
