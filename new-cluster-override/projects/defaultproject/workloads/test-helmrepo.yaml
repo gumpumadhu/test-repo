@@ -5,7 +5,10 @@ metadata:
   project: defaultproject
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartName: nginx
+      chartVersion: 9.5.4
+      repository: default-bitnami
     options:
       maxHistory: 10
       timeout: 5m0s
@@ -13,4 +16,5 @@ spec:
   drift:
     enabled: false
   namespace: gajanan-ns
-  placement: {}
+  placement:
+    selector: rafay.dev/clusterName=gajanan-tb-mks-co
