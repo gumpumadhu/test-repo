@@ -3,4 +3,8 @@ kind: OPAPolicy
 metadata:
   name: test
   project: defaultproject
-spec: {}
+spec:
+  installationParams: {}
+  sharing:
+    enabled: false
+  version: v1
