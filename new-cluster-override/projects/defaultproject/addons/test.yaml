@@ -5,7 +5,11 @@ metadata:
   project: defaultproject
 spec:
   artifact:
-    artifact: {}
+    artifact:
+      chartPath:
+        name: file://artifacts/test/nginx-9.5.4.tgz
+      valuesPaths:
+      - name: file://artifacts/test/values.yaml
     options:
       maxHistory: 10
       timeout: 5m0s
@@ -13,3 +17,4 @@ spec:
   namespace: gajanan-ns
   sharing:
     enabled: false
+  version: v1
