@@ -11,6 +11,8 @@ spec:
     labels:
     - key: rafay.dev/clusterName
       value: test-cluster
+    - key: rafay.dev/clusterName
+      value: gajanan-tb-mks-co
   resource:
     selector:
       name: test
