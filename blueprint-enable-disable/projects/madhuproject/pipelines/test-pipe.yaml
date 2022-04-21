@@ -22,3 +22,13 @@ spec:
       systemToGitSync: true
     name: test
     type: SystemSync
+  triggers:
+  - config:
+      cronExpression: '* * * * *'
+      repo:
+        paths:
+        - name: blueprint-enable-disable
+        repository: gajanan-test
+        revision: main
+    name: test
+    type: Cron
