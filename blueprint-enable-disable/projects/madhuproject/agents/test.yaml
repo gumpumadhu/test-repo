@@ -1,0 +1,10 @@
+apiVersion: gitops.k8smgmt.io/v3
+kind: Agent
+metadata:
+  name: test
+  project: madhuproject
+spec:
+  active: true
+  cluster:
+    name: madhueks-bp-ed
+  type: Cluster

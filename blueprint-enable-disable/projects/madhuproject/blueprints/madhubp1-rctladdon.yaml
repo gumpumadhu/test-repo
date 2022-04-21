@@ -1,0 +1,43 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Blueprint
+metadata:
+  name: madhubp1-rctladdon
+  project: madhuproject
+spec:
+  base:
+    name: default
+    version: 1.13.0
+  customAddons:
+  - name: madhurctladdon-release
+    version: v1
+  defaultAddons:
+    enableIngress: true
+    enableLogging: false
+    enableMonitoring: true
+    enableVM: false
+    monitoring:
+      helmExporter:
+        discovery: {}
+        enabled: true
+      kubeStateMetrics:
+        discovery: {}
+        enabled: true
+      metricsServer:
+        enabled: true
+      nodeExporter:
+        discovery: {}
+        enabled: true
+      prometheusAdapter:
+        enabled: true
+      resources: {}
+  drift:
+    enabled: false
+  opaPolicy: {}
+  placement:
+    autoPublish: true
+    fleetValues:
+    - test-prod-rctl-bp-2-f1
+    - test-prod-rctl-bp-2-f2
+  sharing:
+    enabled: false
+  version: v3

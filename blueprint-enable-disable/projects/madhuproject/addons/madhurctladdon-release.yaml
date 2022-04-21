@@ -1,0 +1,16 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Addon
+metadata:
+  name: madhurctladdon-release
+  project: madhuproject
+spec:
+  artifact:
+    artifact:
+      paths:
+      - name: file://artifacts/madhurctladdon-release/webapp.yaml
+    options: {}
+    type: Yaml
+  namespace: madhuaddon1
+  sharing:
+    enabled: false
+  version: v1
