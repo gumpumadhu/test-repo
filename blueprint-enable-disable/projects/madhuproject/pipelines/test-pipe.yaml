@@ -4,7 +4,7 @@ metadata:
   name: test-pipe
   project: madhuproject
 spec:
-  active: false
+  active: true
   sharing:
     enabled: false
   stages:
